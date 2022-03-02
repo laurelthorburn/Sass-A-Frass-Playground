@@ -1,0 +1,22 @@
+//mix-in is like a function in JS, let's us take code and use anywhere we want
+
+@mixin flexCenter($direction, $background){
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+header {
+    @include flexCenter(column, lightblue);
+    color: $textColor;
+    width: 100% - 20%;
+    button {
+        background: $primaryBtn;
+        &::after{
+            content: "Hello!"
+        }
+    }
+}
